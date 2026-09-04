@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tab It — someone walks in, your screen changes</title>
+<meta name="description" content="A small motion sensor for your desk. When someone walks into the room, your PC does whatever you told it to.">
+<meta property="og:title" content="Tab It">
+<meta property="og:description" content="Someone walks in, your screen changes.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23000'/%3E%3Cg fill='none' stroke='%2339ff14' stroke-linecap='round'%3E%3Cpath d='M19.6 24.9A36 36 0 0 1 80 24.9' stroke-width='5.2'/%3E%3Cpath d='M28.3 30.6A25.6 25.6 0 0 1 71.3 30.6' stroke-width='4.8'/%3E%3Cpath d='M36.8 36.1A15.5 15.5 0 0 1 62.8 36.1' stroke-width='4.4'/%3E%3C/g%3E%3Cpath d='M10.8 38.3H89.2L79.5 53H20.5Z' fill='%23e6ffe9'/%3E%3Crect x='41.8' y='38.3' width='16.4' height='50.2' rx='2.8' fill='%23e6ffe9'/%3E%3Ccircle cx='49.8' cy='44.5' r='9.8' fill='%23000'/%3E%3Ccircle cx='49.8' cy='44.5' r='6.2' fill='%2339ff14'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#000; --card:#0c100c; --input:#131813; --border:#1f2a1f;
+    --text:#e6ffe9; --dim:#7f9a86; --faint:#52685a;
+    --accent:#39ff14; --on-accent:#04140a; --amber:#ffc21f;
+    --mono:"Cascadia Mono",Consolas,ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:"Segoe UI Variable Display","Segoe UI",Inter,system-ui,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:72px 0 8px;text-align:center}
+  .mark{width:112px;height:112px}
+  h1{font-size:clamp(38px,7vw,60px);line-height:1.05;margin:26px 0 10px;letter-spacing:-1.5px;font-weight:600}
+  .tag{color:var(--dim);font-size:clamp(17px,2.4vw,20px);margin:0 auto 34px;max-width:30ch}
+  .cta{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    padding:15px 30px;border-radius:10px;font-weight:600;font-size:17px;
+    background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);
+    transition:transform .12s ease,filter .12s ease;
+  }
+  .btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn.ghost:hover{border-color:var(--accent);filter:none}
+  .meta{color:var(--faint);font-size:13px;font-family:var(--mono);margin-bottom:64px}
+  section{padding:34px 0;border-top:1px solid var(--border)}
+  h2{font-size:13px;letter-spacing:2.4px;text-transform:uppercase;color:var(--faint);
+     font-family:var(--mono);font-weight:600;margin:0 0 20px}
+  .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card p{margin:0;color:var(--dim);font-size:14.5px}
+  ol{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:16px}
+  ol li{counter-increment:s;display:flex;gap:16px;align-items:flex-start}
+  ol li::before{
+    content:counter(s);flex:0 0 30px;height:30px;border-radius:50%;
+    background:var(--input);border:1px solid var(--border);color:var(--accent);
+    font-family:var(--mono);font-size:14px;display:grid;place-items:center;margin-top:2px;
+  }
+  ol li p{margin:0;color:var(--dim);font-size:14.5px}
+  ol li b{color:var(--text);font-weight:600;display:block}
+  .note{
+    background:var(--input);border:1px solid var(--border);border-left:3px solid var(--amber);
+    border-radius:8px;padding:16px 18px;color:var(--dim);font-size:14.5px;
+  }
+  .note b{color:var(--amber)}
+  kbd{
+    font-family:var(--mono);font-size:12.5px;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;padding:2px 6px;color:var(--text);
+  }
+  footer{padding:44px 0 60px;color:var(--faint);font-size:13.5px;text-align:center;
+         border-top:1px solid var(--border);margin-top:20px}
+  footer a{color:var(--dim)}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <svg class="mark" viewBox="0 0 100 100" aria-label="Tab It">
+      <rect width="100" height="100" rx="24" fill="#0c100c" stroke="#1f2a1f"/>
+      <g fill="none" stroke="#39ff14" stroke-linecap="round">
+        <path d="M19.6 24.9A36 36 0 0 1 80 24.9" stroke-width="5.2"/>
+        <path d="M28.3 30.6A25.6 25.6 0 0 1 71.3 30.6" stroke-width="4.8"/>
+        <path d="M36.8 36.1A15.5 15.5 0 0 1 62.8 36.1" stroke-width="4.4"/>
+      </g>
+      <path d="M10.8 38.3H89.2L79.5 53H20.5Z" fill="#e6ffe9"/>
+      <rect x="41.8" y="38.3" width="16.4" height="50.2" rx="2.8" fill="#e6ffe9"/>
+      <circle cx="49.8" cy="44.5" r="9.8" fill="#0c100c"/>
+      <circle cx="49.8" cy="44.5" r="6.2" fill="#39ff14"/>
+    </svg>
+
+    <h1>Someone walks in.<br>Your screen changes.</h1>
+    <p class="tag">A small motion sensor that watches your doorway, and a Windows app that does what you tell it to.</p>
+
+    <div class="cta">
+      <a class="btn" id="download" href="https://github.com/Tabit-Australia/tabit-releases/releases/latest">
+        Download for Windows
+      </a>
+      <a class="btn ghost" href="https://discord.gg/K2v4MPASn">Join the Discord</a>
+    </div>
+    <p class="meta" id="meta">Windows 10 or 11 · 64-bit</p>
+  </header>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Watches the door, not you</h3>
+        <p>A passive infrared sensor sees movement, nothing else. No camera, no microphone, and nothing leaves your desk.</p>
+      </div>
+      <div class="card">
+        <h3>You choose what happens</h3>
+        <p>Switch window, show the desktop, lock the PC, open a program, pause your music. One arrival, one action.</p>
+      </div>
+      <div class="card">
+        <h3>Quiet when you want it</h3>
+        <p>Quiet hours, a pause button on your phone, and an undo for when it fires and you would rather it had not.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Setting it up</h2>
+    <ol>
+      <li><p><b>Install the app</b>Run the installer. It takes a few seconds and puts Tab It in your Start menu.</p></li>
+      <li><p><b>Plug your Tab It in</b>Any USB port. The app finds it on its own and walks you through naming it.</p></li>
+      <li><p><b>Point it at the doorway</b>Give it about twenty seconds to settle, then walk in front of it.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Before you install</h2>
+    <p class="note">
+      <b>Windows will warn you.</b> You will see “Windows protected your PC — unknown publisher”.
+      Tab It is not code-signed yet, which is a certificate we have not bought rather than anything
+      wrong with the download. Choose <kbd>More info</kbd> then <kbd>Run anyway</kbd>.
+      Every release is listed here with a SHA-256 you can check against the file.
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="https://github.com/Tabit-Australia/tabit-releases/releases">All releases</a> ·
+      <a href="latest.json">Update listing</a> ·
+      <a href="https://discord.gg/K2v4MPASn">Discord</a>
+    </p>
+    <p>Tab It</p>
+  </footer>
+</div>
+
+<script>
+// The button points at the releases page even if this fails; reading the same
+// listing the app uses just makes it one click instead of two, and lets the
+// page state the version and size without anyone editing HTML at release time.
+fetch("latest.json", {cache: "no-store"})
+  .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+  .then(function (d) {
+    if (!d.url || d.url.indexOf("https://") !== 0) return;
+    document.getElementById("download").href = d.url;
+    var mb = d.size ? (d.size / 1e6).toFixed(0) + " MB · " : "";
+    document.getElementById("meta").textContent =
+      "Version " + d.version + " · " + mb + "Windows 10 or 11 · 64-bit";
+  })
+  .catch(function () { /* the fallback link is already correct */ });
+</script>
+</body>
+</html>
