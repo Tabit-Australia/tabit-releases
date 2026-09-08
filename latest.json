@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.0/TabIt-1.1.0-setup.exe",
-  "sha256": "6683412a33a4d89fc26f979a4982d0f9d7bfe1eb878ff5e8120d28ed29a7244d",
-  "size": 35437186,
-  "notes": "Accounts, fourteen themes, a new look, and Tab It updates itself."
+  "version": "1.1.1",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.1/TabIt-1.1.1-setup.exe",
+  "sha256": "56a205437660a7d23e32288007cbab999f0cafb4697154d4df19f9f545972685",
+  "size": 35430113,
+  "notes": "Updates now show in the header and the tray, not only in Settings."
 }
