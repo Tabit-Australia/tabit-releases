@@ -1,7 +1,7 @@
 {
-  "version": "1.4.3",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.4.3/TabIt-1.4.3-setup.exe",
-  "sha256": "d5a234b9a95997b999a60f2215bd0344810f375c7ef154061f5f583ef5ac8edc",
-  "size": 35443254,
-  "notes": "Checks for an update every time it starts."
+  "version": "1.4.4",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.4.4/TabIt-1.4.4-setup.exe",
+  "sha256": "bdf22cbe8a944a29bbd0579e5fd212ab184468eeba62396a1e6e756a54ec6afe",
+  "size": 35445004,
+  "notes": "The tray tooltip keeps the update note."
 }
