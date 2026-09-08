@@ -1,7 +1,7 @@
-{
-  "version": "1.1.1",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.1/TabIt-1.1.1-setup.exe",
-  "sha256": "56a205437660a7d23e32288007cbab999f0cafb4697154d4df19f9f545972685",
-  "size": 35430113,
-  "notes": "Updates now show in the header and the tray, not only in Settings."
+﻿{
+    "version":  "1.1.2",
+    "url":  "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.2/TabIt-1.1.2-setup.exe",
+    "sha256":  "671d660997a5f3029bfaef3caf7a670a9dc051ab160d19266977953623351493",
+    "size":  35432020,
+    "notes":  "Tab It now comes back after updating itself."
 }
