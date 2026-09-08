@@ -1,7 +1,7 @@
 {
-  "version": "1.4.4",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.4.4/TabIt-1.4.4-setup.exe",
-  "sha256": "bdf22cbe8a944a29bbd0579e5fd212ab184468eeba62396a1e6e756a54ec6afe",
-  "size": 35445004,
-  "notes": "The tray tooltip keeps the update note."
+  "version": "1.5.0",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.0/TabIt-1.5.0-setup.exe",
+  "sha256": "68a494b4cafa74a2fd0cfbb719fb0b6c312def51b846f59f0e9a97b32eff0340",
+  "size": 35448882,
+  "notes": "Optional notifications for arrivals, quiet hours, the device and updates."
 }
