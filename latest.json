@@ -1,7 +1,7 @@
 {
-  "version": "1.4.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.4.0/TabIt-1.4.0-setup.exe",
-  "sha256": "ea567c6eadb430b74f8935c404b5be4a961589f267bccb4e7182846b5270ebd2",
-  "size": 35450084,
-  "notes": "Tabit now remembers what it did across restarts."
+  "version": "1.4.1",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.4.1/TabIt-1.4.1-setup.exe",
+  "sha256": "bc3bc731f217f4e704cf149c260ea4129299812bd30901167ac2c88e1df27ae6",
+  "size": 35432393,
+  "notes": "Update checks see a new release straight away."
 }
