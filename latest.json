@@ -1,7 +1,7 @@
-﻿{
-    "version":  "1.1.2",
-    "url":  "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.2/TabIt-1.1.2-setup.exe",
-    "sha256":  "671d660997a5f3029bfaef3caf7a670a9dc051ab160d19266977953623351493",
-    "size":  35432020,
-    "notes":  "Tab It now comes back after updating itself."
+{
+  "version": "1.1.2",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.2/TabIt-1.1.2-setup.exe",
+  "sha256": "671d660997a5f3029bfaef3caf7a670a9dc051ab160d19266977953623351493",
+  "size": 35432020,
+  "notes": "Tab It now comes back after updating itself."
 }
