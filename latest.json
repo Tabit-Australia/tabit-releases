@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.0.0/TabIt-1.0.0-setup.exe",
-  "sha256": "8999182f114a861a75104069225e296c15ac24a7f8026603a69f46398672ab6f",
-  "size": 35429158,
-  "notes": "First packaged release."
+  "version": "1.1.0",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.1.0/TabIt-1.1.0-setup.exe",
+  "sha256": "6683412a33a4d89fc26f979a4982d0f9d7bfe1eb878ff5e8120d28ed29a7244d",
+  "size": 35437186,
+  "notes": "Accounts, fourteen themes, a new look, and Tab It updates itself."
 }
