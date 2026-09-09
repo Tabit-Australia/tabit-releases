@@ -1,0 +1,92 @@
+name: Announce a release on Discord
+
+# Fires when a release is published in this repo, however it was published -
+# the gh CLI, the web UI, or an API call. Announcing from here rather than
+# from whichever machine cut the release is the point: the announcement
+# cannot be forgotten, and it cannot describe a release that does not exist.
+on:
+  release:
+    types: [published]
+  # For a test post, or to re-announce one that failed to send.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to announce, e.g. v1.5.2"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post the release to Discord
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${WEBHOOK:-}" ]; then
+            echo "::error::No DISCORD_WEBHOOK secret is set on this repository."
+            exit 1
+          fi
+
+          release=$(gh api "repos/$REPO/releases/tags/$TAG")
+          version=${TAG#v}
+          html_url=$(jq -r '.html_url' <<<"$release")
+
+          # The notes down to the first horizontal rule. Everything below it is
+          # the boilerplate footer, which the embed says in its own footer.
+          notes=$(jq -r '.body // ""' <<<"$release" \
+                  | awk '/^---[[:space:]]*$/ { exit } { print }' \
+                  | head -c 1500)
+
+          # The setup file, not the source tarballs GitHub adds by itself.
+          asset=$(jq -r '[.assets[] | select(.name | endswith("setup.exe"))][0]' <<<"$release")
+          if [ "$asset" = "null" ]; then
+            echo "::error::$TAG has no setup.exe attached - refusing to announce a release nobody can download."
+            exit 1
+          fi
+          asset_name=$(jq -r '.name' <<<"$asset")
+          asset_url=$(jq -r '.browser_download_url' <<<"$asset")
+          mb=$(( ($(jq -r '.size' <<<"$asset") + 500000) / 1000000 ))
+
+          # Built with jq rather than a here-doc so release notes containing a
+          # quote, a backslash or a newline cannot break the request.
+          payload=$(jq -n \
+            --arg title "Tabit $version" \
+            --arg url "$html_url" \
+            --arg desc "$notes" \
+            --arg name "$asset_name" \
+            --arg dl "$asset_url" \
+            --arg mb "$mb" \
+            '{
+              username: "Tabit",
+              avatar_url: "https://tabit-australia.github.io/tabit-releases/tabit.png",
+              embeds: [{
+                title: $title,
+                url: $url,
+                description: $desc,
+                color: 3800852,
+                fields: [{
+                  name: "Download",
+                  value: "[\($name)](\($dl)) · \($mb) MB"
+                }],
+                footer: {
+                  text: "Windows 10 or 11 · 64-bit · installs from 1.4.3 on update themselves"
+                }
+              }]
+            }')
+
+          # -f so an HTTP error fails the job instead of passing silently.
+          # GitHub masks the webhook in the log; nothing here echoes it.
+          curl -sS -f -X POST \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$WEBHOOK" > /dev/null
+
+          echo "Announced Tabit $version."
