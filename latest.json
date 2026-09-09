@@ -1,7 +1,7 @@
 {
-  "version": "1.5.2",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.2/TabIt-1.5.2-setup.exe",
-  "sha256": "12ceb91de21beca8b088159f2ce520bb8a5a23ab2b4408aef634f5ce172cfbb9",
-  "size": 35465235,
-  "notes": "Scrolling a settings page no longer changes the setting the pointer happens to cross."
+  "version": "1.5.3",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.3/TabIt-1.5.3-setup.exe",
+  "sha256": "e04282d8be1240dbaaeb830c017e8e5cf7c0a651565e41ca05180866fc06b7db",
+  "size": 35460034,
+  "notes": "The re-arm slider on the home screen and the one on the device page are the same setting again, and it saves with no device connected."
 }
