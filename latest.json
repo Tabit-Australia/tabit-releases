@@ -1,7 +1,7 @@
 {
-  "version": "1.5.1",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.1/TabIt-1.5.1-setup.exe",
-  "sha256": "5d3d6a7a02af83845a59368183cda03deb4218092ba61dc6e6ee549a4ff9f701",
-  "size": 35457874,
-  "notes": "A bouncing logo you can pick as the background, and a power button that pauses for 5 minutes to 3 hours and starts again on its own."
+  "version": "1.5.2",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.2/TabIt-1.5.2-setup.exe",
+  "sha256": "12ceb91de21beca8b088159f2ce520bb8a5a23ab2b4408aef634f5ce172cfbb9",
+  "size": 35465235,
+  "notes": "Scrolling a settings page no longer changes the setting the pointer happens to cross."
 }
