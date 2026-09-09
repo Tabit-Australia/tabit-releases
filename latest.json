@@ -1,7 +1,7 @@
 {
-  "version": "1.5.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.0/TabIt-1.5.0-setup.exe",
-  "sha256": "68a494b4cafa74a2fd0cfbb719fb0b6c312def51b846f59f0e9a97b32eff0340",
-  "size": 35448882,
-  "notes": "Optional notifications for arrivals, quiet hours, the device and updates."
+  "version": "1.5.1",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.1/TabIt-1.5.1-setup.exe",
+  "sha256": "5d3d6a7a02af83845a59368183cda03deb4218092ba61dc6e6ee549a4ff9f701",
+  "size": 35457874,
+  "notes": "A bouncing logo you can pick as the background, and a power button that pauses for 5 minutes to 3 hours and starts again on its own."
 }
