@@ -30,7 +30,12 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${WEBHOOK:-}" ]; then
+          # Trimmed: a webhook pasted into the web UI, or piped in with a
+          # trailing newline, is otherwise a URL curl refuses outright - and
+          # that failure reads as Discord rejecting us rather than as a stray
+          # character nobody can see.
+          WEBHOOK=$(printf '%s' "${WEBHOOK:-}" | tr -d '[:space:]')
+          if [ -z "$WEBHOOK" ]; then
             echo "::error::No DISCORD_WEBHOOK secret is set on this repository."
             exit 1
           fi
