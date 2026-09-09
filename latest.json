@@ -1,7 +1,7 @@
 {
-  "version": "1.5.3",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.5.3/TabIt-1.5.3-setup.exe",
-  "sha256": "e04282d8be1240dbaaeb830c017e8e5cf7c0a651565e41ca05180866fc06b7db",
-  "size": 35460034,
-  "notes": "The re-arm slider on the home screen and the one on the device page are the same setting again, and it saves with no device connected."
+  "version": "1.6.0",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.6.0/TabIt-1.6.0-setup.exe",
+  "sha256": "f5b02aa2bb89dcb5eb9fafe20d10126934b08d4c42041e3e6b26d878a903db23",
+  "size": 36463539,
+  "notes": "Settings rebuilt around a sidebar, an account panel, and controls that no longer change when you scroll past them."
 }
