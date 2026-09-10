@@ -1,7 +1,7 @@
 {
-  "version": "1.7.5",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.5/TabIt-1.7.5-setup.exe",
-  "sha256": "1ff633d30a0231b8da7981cca74afef1665738e40fb003c8591d3051ef03f86a",
-  "size": 38667530,
-  "notes": "The action dropdown now shows which profile you are on, and switches profile from the same list."
+  "version": "1.7.6",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.6/TabIt-1.7.6-setup.exe",
+  "sha256": "4dc83ba87f67d9ff8687eaf15036678b8d6c9190a8347d2e8e04a071004d600d",
+  "size": 38662967,
+  "notes": "A Profiles / Functions switch on the home screen: pick which profile is running, or what it does, from the same dropdown."
 }
