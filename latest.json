@@ -1,7 +1,7 @@
 {
-  "version": "1.6.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.6.0/TabIt-1.6.0-setup.exe",
-  "sha256": "f5b02aa2bb89dcb5eb9fafe20d10126934b08d4c42041e3e6b26d878a903db23",
-  "size": 36463539,
-  "notes": "Settings rebuilt around a sidebar, an account panel, and controls that no longer change when you scroll past them."
+  "version": "1.7.0",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.0/TabIt-1.7.0-setup.exe",
+  "sha256": "17933db606ec2de264d07046702e4de2e093b8505100aca16bf2d7d7a5418c12",
+  "size": 36473843,
+  "notes": "Wi-Fi setup fixed, devices keep their own firmware in step, and each Tabit now shows its serial."
 }
