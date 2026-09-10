@@ -1,7 +1,7 @@
 {
-  "version": "1.7.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.0/TabIt-1.7.0-setup.exe",
-  "sha256": "17933db606ec2de264d07046702e4de2e093b8505100aca16bf2d7d7a5418c12",
-  "size": 36473843,
-  "notes": "Wi-Fi setup fixed, devices keep their own firmware in step, and each Tabit now shows its serial."
+  "version": "1.7.1",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.1/TabIt-1.7.1-setup.exe",
+  "sha256": "ed1cd1e7dd214a03b52a928f556c921eabf1d2fab484b8c59c63fd94a3fec2a9",
+  "size": 36464359,
+  "notes": "A maintenance release. Nothing to see."
 }
