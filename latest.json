@@ -1,7 +1,7 @@
 {
-  "version": "1.7.1",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.1/TabIt-1.7.1-setup.exe",
-  "sha256": "ed1cd1e7dd214a03b52a928f556c921eabf1d2fab484b8c59c63fd94a3fec2a9",
-  "size": 36464359,
-  "notes": "A maintenance release. Nothing to see."
+  "version": "1.7.2",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.2/TabIt-1.7.2-setup.exe",
+  "sha256": "c469761ef27744adb88cb84d44206926da7c45c5103c5dc51917f21f5d19c233",
+  "size": 38654386,
+  "notes": "Tabit installs its own updates now, and licence keys are properly checked."
 }
