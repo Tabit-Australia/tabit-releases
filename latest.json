@@ -1,7 +1,7 @@
 {
-  "version": "1.7.3",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.3/TabIt-1.7.3-setup.exe",
-  "sha256": "009eff8ce133b8b94f44fdb52e799e024a2e2ade58df09f5faa59733f122c138",
-  "size": 38657571,
-  "notes": "Pick your profile straight from the home screen, dropdowns have arrows again, and numbers can be typed in one go."
+  "version": "1.7.4",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.4/TabIt-1.7.4-setup.exe",
+  "sha256": "dc865b2320c78e8447156029210ac7323652dd0e96e1d3697a845dc1123367a9",
+  "size": 38660223,
+  "notes": "Switch profile straight from the action list on the home screen, dropdowns have arrows again, and numbers can be typed in one go."
 }
