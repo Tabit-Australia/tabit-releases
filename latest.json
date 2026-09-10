@@ -1,7 +1,7 @@
 {
   "version": "1.7.3",
   "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.3/TabIt-1.7.3-setup.exe",
-  "sha256": "7fb087530608628a39844239db9e17fcfa88f71c1901367a4db553d223c3258d",
-  "size": 38657685,
-  "notes": "Dropdowns have arrows again, numbers can be typed in one go, and the bouncing logo stops freezing."
+  "sha256": "009eff8ce133b8b94f44fdb52e799e024a2e2ade58df09f5faa59733f122c138",
+  "size": 38657571,
+  "notes": "Pick your profile straight from the home screen, dropdowns have arrows again, and numbers can be typed in one go."
 }
