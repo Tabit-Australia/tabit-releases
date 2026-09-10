@@ -1,7 +1,7 @@
 {
-  "version": "1.7.2",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.2/TabIt-1.7.2-setup.exe",
-  "sha256": "c469761ef27744adb88cb84d44206926da7c45c5103c5dc51917f21f5d19c233",
-  "size": 38654386,
-  "notes": "Tabit installs its own updates now, and licence keys are properly checked."
+  "version": "1.7.3",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.3/TabIt-1.7.3-setup.exe",
+  "sha256": "7fb087530608628a39844239db9e17fcfa88f71c1901367a4db553d223c3258d",
+  "size": 38657685,
+  "notes": "Dropdowns have arrows again, numbers can be typed in one go, and the bouncing logo stops freezing."
 }
