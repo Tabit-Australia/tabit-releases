@@ -1,7 +1,7 @@
 {
-  "version": "1.7.6",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.7.6/TabIt-1.7.6-setup.exe",
-  "sha256": "4dc83ba87f67d9ff8687eaf15036678b8d6c9190a8347d2e8e04a071004d600d",
-  "size": 38662967,
-  "notes": "A Profiles / Functions switch on the home screen: pick which profile is running, or what it does, from the same dropdown."
+  "version": "1.8.0",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.8.0/TabIt-1.8.0-setup.exe",
+  "sha256": "dc95b0fd1df9b716de6da9d447176e69cfa03202470d4cad13870b46c9963f96",
+  "size": 38671856,
+  "notes": "Messages from the Tabit team on the home screen, Tabit Plus keys checked when you activate them, and new tools for testers."
 }
