@@ -1,7 +1,7 @@
 {
-  "version": "1.8.0",
-  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.8.0/TabIt-1.8.0-setup.exe",
-  "sha256": "dc95b0fd1df9b716de6da9d447176e69cfa03202470d4cad13870b46c9963f96",
-  "size": 38671856,
-  "notes": "Messages from the Tabit team on the home screen, Tabit Plus keys checked when you activate them, and new tools for testers."
+  "version": "1.8.1",
+  "url": "https://github.com/Tabit-Australia/tabit-releases/releases/download/v1.8.1/TabIt-1.8.1-setup.exe",
+  "sha256": "30219037f17eb7df637db4c7d6e159c04be7edf572ec421f5cc71b8911cac4e3",
+  "size": 38683707,
+  "notes": "Support for the new Tabit hardware, a colour status light, and a long list of Wi-Fi and reliability fixes."
 }
